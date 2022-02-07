@@ -1,4 +1,3 @@
-
 let booksList = [];
 let id=0;
 const Books = function (title, author, id) {
@@ -26,6 +25,7 @@ function addNewBook(){
 function saveDataLocalStorage(booksList){
     localStorage.setItem('books', JSON.stringify(booksList));
 }
+
 function generateBooks(){
     if(localStorage.getItem('books') !=null){
         books =JSON.parse(localStorage.getItem('books'));
@@ -36,11 +36,20 @@ function generateBooks(){
             `<li>
             <div>${element.title}</div>
             <div>${element.author}</div>
-            <div><button>remove</button</div>
+            <div><button type="btn" onclick="remove(${element.id})">remove</button</div>
             </li>
             `;
         });
         list += '</ul>'
         container.innerHTML = list;
     }
+}
+
+window.onload = generateBooks();
+
+function remove(id) {
+    booksList = booksList.filter(book => book.id !== id);
+    saveDataLocalStorage(booksList);
+    generateBooks();
+
 }
