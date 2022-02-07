@@ -1,9 +1,10 @@
 li {
-    list-style: none;
-  }
-  li::after {
-    content: "";
-    display: block;
-    border-bottom: 1px solid #333;
-    margin-block: 2rem;
-  }
+  list-style: none;
+}
+
+li::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #333;
+  margin-block: 2rem;
+}

@@ -28,15 +28,15 @@ function saveDataLocalStorage(booksList){
 
 function generateBooks(){
     if(localStorage.getItem('books') !=null){
-        books =JSON.parse(localStorage.getItem('books'));
-        console.log(books);
+        booksList =JSON.parse(localStorage.getItem('books'));
+        console.log(booksList);
         let list  ='<ul>';
-        books.forEach(element => {
+        booksList.forEach((element,index )=> {
             list += 
             `<li>
             <div>${element.title}</div>
             <div>${element.author}</div>
-            <div><button type="btn" onclick="remove(${element.id})">remove</button</div>
+            <div><button type="btn" onclick="remove(${index})">remove</button</div>
             </li>
             `;
         });
@@ -47,9 +47,8 @@ function generateBooks(){
 
 window.onload = generateBooks();
 
-function remove(id) {
-    booksList = booksList.filter(book => book.id !== id);
+function remove(index) {
+    booksList = booksList.filter((book, ind) => ind !== index);
     saveDataLocalStorage(booksList);
     generateBooks();
-
 }
