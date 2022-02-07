@@ -4,7 +4,7 @@
 
 > Awesome Books.
 
-![screenshot](https://github.com/miftah1991/Technology-Conference-/blob/conference-pages/images/Demo.png)
+![screenshot](https://github.com/miftah1991/Awesomebooks/blob/milestones/img-1.png)
 
 
 ## Built With
@@ -15,7 +15,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://github.com/miftah1991/Awesomebooks)
+[Live Demo Link](https://miftah1991.github.io/Awesomebooks/)
 
 
 ## Author
