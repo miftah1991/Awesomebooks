@@ -1,54 +1,63 @@
 let booksList = [];
-let id=0;
-const Books = function (title, author, id) {
-    this.title = title;
-    this.author = author;
-    this.id = id;
-  };
 const addBookbtn = document.querySelector('.Add');
-const container = document.querySelector('.list-show');
+const container = document.getElementById('book-lis');
+function saveDataLocalStorage(booksList) {
+  localStorage.setItem('books', JSON.stringify(booksList));
+}
+function remove(index) {
+  booksList = booksList.filter((book, ind) => ind !== index);
+  saveDataLocalStorage(booksList);
+}
 
+function generateBooks() {
+  container.innerHTML = '';
+  if (localStorage.getItem('books') != null) {
+    booksList = JSON.parse(localStorage.getItem('books'));
+    booksList.forEach((element, index) => {
+      const li = document.createElement('li');
+      const titleDiv = document.createElement('div');
+      titleDiv.className = 'book-title';
+      titleDiv.textContent = element.title;
+      li.appendChild(titleDiv);
+      const authoorDiv = document.createElement('div');
+      authoorDiv.className = 'book-authoor';
+      authoorDiv.textContent = element.title;
+      li.appendChild(authoorDiv);
+      const removebtn = document.createElement('button');
+      removebtn.className = 'remove-button';
+      removebtn.textContent = 'Remove';
+      // list
+      //       += `<li>
+      //       <div>${element.title}</div>
+      //       <div>${element.author}</div>
+      //         <div><button type="button" id="btn${index}" >remove</button</div>
+      //       </li>
+      //       `;
+      // console.log(list);
+      // container.append(list)
+      // const rbtn = document.getElementById('btn'+index);
+      removebtn.addEventListener('click', () => {
+        remove(index);
+        generateBooks();
+      });
+      li.appendChild(removebtn);
+      container.append(li);
+    });
+    // list += '</ul>';
+  }
+}
+
+function addNewBook() {
+  const title = document.querySelector('.title').value;
+  const author = document.querySelector('.author').value;
+  const book = {
+    title,
+    author,
+  };
+  booksList.push(book);
+  saveDataLocalStorage(booksList);
+  generateBooks();
+}
 addBookbtn.addEventListener('click', () => addNewBook());
-function addNewBook(){
-    const title = document.querySelector('.title').value;
-    const author = document.querySelector('.author').value;
-    const book = {
-        id,
-        title,
-        author,
-    };
-    booksList.push(book);
-    id++;
-    saveDataLocalStorage(booksList);
-    generateBooks();
-}
-function saveDataLocalStorage(booksList){
-    localStorage.setItem('books', JSON.stringify(booksList));
-}
-
-function generateBooks(){
-    if(localStorage.getItem('books') !=null){
-        booksList =JSON.parse(localStorage.getItem('books'));
-        console.log(booksList);
-        let list  ='<ul>';
-        booksList.forEach((element,index )=> {
-            list += 
-            `<li>
-            <div>${element.title}</div>
-            <div>${element.author}</div>
-            <div><button type="btn" onclick="remove(${index})">remove</button</div>
-            </li>
-            `;
-        });
-        list += '</ul>'
-        container.innerHTML = list;
-    }
-}
 
 window.onload = generateBooks();
-
-function remove(index) {
-    booksList = booksList.filter((book, ind) => ind !== index);
-    saveDataLocalStorage(booksList);
-    generateBooks();
-}
