@@ -61,4 +61,29 @@ class Book {
 const book = new Book(document.getElementById('book-lis'));
 const addBookbtn = document.querySelector('.Add');
 addBookbtn.addEventListener('click', () => book.addNewBook());
-window.onload = book.generateBooks();
+
+window.onload = () => {
+  book.generateBooks();
+  document.getElementById('book-list').classList.add('show');
+  document.getElementById('book-add').classList.add('hide');
+  document.getElementById('contact').classList.add('hide');
+  console.log('list')
+}
+
+document.getElementById('list-nav').addEventListener('click', () => {
+  document.getElementById('book-list').classList.add('show');
+  document.getElementById('book-add').classList.add('hide');
+  document.getElementById('contact').classList.add('hide');
+});
+
+document.getElementById('add-nav').addEventListener('click', () => {
+  document.getElementById('book-list').classList.add('hide');
+  document.getElementById('book-add').classList.add('show');
+  document.getElementById('contact').classList.add('hide');
+});
+
+document.getElementById('contact-nav').addEventListener('click', () => {
+  document.getElementById('book-list').classList.add('hide');
+  document.getElementById('book-add').classList.add('hide');
+  document.getElementById('contact').classList.add('show');
+});

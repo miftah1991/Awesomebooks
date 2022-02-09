@@ -18,7 +18,7 @@
             <div class="menu">
                 <ul>
                     <li class="" >
-                        <a href="#" id="list"  class="nav-link m-2 menu-item text-white">List</a>
+                        <a href="#" id="list-nav"  class="nav-link m-2 menu-item text-white">List</a>
                     </li>
                     <li class="">
                         <a href="#" id="add-nav"  class="nav-link m-2 menu-item text-white">Add a book</a>
@@ -30,23 +30,28 @@
             </div>
         </nav>
     </header>
-    <section class="books-section">
-        <h1>Awesome Books</h1>
-        <div class="list-show">
-            <ul id="book-lis">
-
-            </ul>
-        </div>
-    </section>
-    <hr class="hrbar">
-    <section class="books-add-section">
-        <h2>Add New Book</h2>
-        <div class="add-book-elements">
-            <input type="text" class="title" placeholder="title"> <br><br>
-            <input type="text" class="author" placeholder="author"> <br><br>
-            <button type="button" class="Add">Add</button>
-        </div>
-    </section>
+    <main id="main">
+        <section id="book-list" class="books-section">
+            
+            <div class="list-show">
+                <ul id="book-lis">
+    
+                </ul>
+            </div>
+        </section>
+        <section id="book-add" class="books-add-section">
+            <h2>Add New Book</h2>
+            <div class="add-book-elements">
+                <input type="text" class="title" placeholder="title"> <br><br>
+                <input type="text" class="author" placeholder="author"> <br><br>
+                <button type="button" class="Add">Add</button>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            
+        </section>
+    </main>
+    
     <script src="js/site.js"></script>
 </body>
 </html>
