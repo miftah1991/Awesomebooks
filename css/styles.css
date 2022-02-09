@@ -62,6 +62,36 @@ li {
   background-color: #ddd;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  margin-bottom: 2vh;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 24px;
+ 
+}
+
+.date-row {
+  display: flex;
+  justify-content: right;
+  padding-right: 10px;
+  
+}
+
+footer{
+  border: 2px solid black;
+  padding-left: 15px;
+  margin-top: 15px;
+}
+
 @media screen and (min-width: 768px) {
   .title,
   .author,
