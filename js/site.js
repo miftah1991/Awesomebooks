@@ -18,7 +18,7 @@ class Book {
         li.appendChild(titleDiv);
         const authoorDiv = document.createElement('div');
         authoorDiv.className = 'book-authoor';
-        authoorDiv.textContent = element.title;
+        authoorDiv.textContent = element.author;
         li.appendChild(authoorDiv);
         const removebtn = document.createElement('button');
         removebtn.className = 'remove-button';
