@@ -2,9 +2,74 @@ li {
   list-style: none;
 }
 
-li::after {
-  content: "";
-  display: block;
-  border-bottom: 1px solid #333;
-  margin-block: 2rem;
+.books-section h1 {
+  text-align: center;
+}
+
+.elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  align-items: center;
+}
+
+.hrbar {
+  width: 30vw;
+  margin-top: 5vh;
+}
+
+/* section: add book */
+.books-add-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-book-elements {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.title,
+.author {
+  width: 60vw;
+  height: 25px;
+}
+
+.Add {
+  align-self: flex-end;
+}
+
+.remove-button {
+  border: solid black;
+  box-shadow: 2px 2px black;
+}
+
+.books-section {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+}
+
+.grey-background {
+  background-color: #ddd;
+}
+
+@media screen and (min-width: 768px) {
+  .title,
+  .author,
+  .elements {
+    width: 30vw;
+  }
+
+  body {
+    padding: 0 5vw;
+  }
 }
