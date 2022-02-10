@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 const { DateTime } = luxon;
 
 document.getElementById('currentdate').innerText = DateTime.local().toLocaleString(DateTime.DATETIME_MED);
