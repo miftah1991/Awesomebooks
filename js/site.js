@@ -16,10 +16,6 @@ class Book {
         titleDiv.className = 'book-title';
         titleDiv.textContent = '"' + element.title+ '" by '+element.author;
         li.appendChild(titleDiv);
-        // const authoorDiv = document.createElement('div');
-        // authoorDiv.className = 'book-authoor';
-        // authoorDiv.textContent = element.author;
-        // li.appendChild(authoorDiv);
         const removebtn = document.createElement('button');
         removebtn.className = 'remove-button';
         removebtn.textContent = 'Remove';
@@ -63,7 +59,9 @@ class Book {
       this.showbooksection();
     }
     
+    
   }
+  
   showbooksection(){
     document.querySelector('.books-section').style.display = 'flex';
     document.querySelector('.books-add-section').style.display = 'none';
