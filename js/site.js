@@ -14,12 +14,12 @@ class Book {
         li.className = 'elements';
         const titleDiv = document.createElement('div');
         titleDiv.className = 'book-title';
-        titleDiv.textContent = element.title;
+        titleDiv.textContent = '"' + element.title+ '" by '+element.author;
         li.appendChild(titleDiv);
-        const authoorDiv = document.createElement('div');
-        authoorDiv.className = 'book-authoor';
-        authoorDiv.textContent = element.author;
-        li.appendChild(authoorDiv);
+        // const authoorDiv = document.createElement('div');
+        // authoorDiv.className = 'book-authoor';
+        // authoorDiv.textContent = element.author;
+        // li.appendChild(authoorDiv);
         const removebtn = document.createElement('button');
         removebtn.className = 'remove-button';
         removebtn.textContent = 'Remove';
