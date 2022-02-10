@@ -49,13 +49,25 @@ class Book {
   addNewBook() {
     const title = document.querySelector('.title').value;
     const author = document.querySelector('.author').value;
-    const book = {
-      title,
-      author,
-    };
-    booksList.push(book);
-    this.saveDataLocalStorage(booksList);
-    this.generateBooks();
+    if(title ==="" || author ===""){
+      const errorLabel = document.querySelector('.validate-error');
+      errorLabel.style.display ="block";
+    }else{
+      const book = {
+        title,
+        author,
+      };
+      booksList.push(book);
+      this.saveDataLocalStorage(booksList);
+      this.generateBooks();
+      this.showbooksection();
+    }
+    
+  }
+  showbooksection(){
+    document.querySelector('.books-section').style.display = 'flex';
+    document.querySelector('.books-add-section').style.display = 'none';
+    document.querySelector('.contact-us').style.display = 'none';
   }
 }
 const book = new Book(document.getElementById('book-lis'));
