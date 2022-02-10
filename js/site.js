@@ -14,7 +14,7 @@ class Book {
         li.className = 'elements';
         const titleDiv = document.createElement('div');
         titleDiv.className = 'book-title';
-        titleDiv.textContent = '"' + element.title+ '" by '+element.author;
+        titleDiv.textContent = `"${element.title}" by ${element.author}`;
         li.appendChild(titleDiv);
         const removebtn = document.createElement('button');
         removebtn.className = 'remove-button';
@@ -45,10 +45,10 @@ class Book {
   addNewBook() {
     const title = document.querySelector('.title').value;
     const author = document.querySelector('.author').value;
-    if(title ==="" || author ===""){
+    if (title === '' || author === '') {
       const errorLabel = document.querySelector('.validate-error');
-      errorLabel.style.display ="block";
-    }else{
+      errorLabel.style.display = 'block';
+    } else {
       const book = {
         title,
         author,
@@ -58,11 +58,9 @@ class Book {
       this.generateBooks();
       this.showbooksection();
     }
-    
-    
   }
-  
-  showbooksection(){
+
+  showbooksection = () => {
     document.querySelector('.books-section').style.display = 'flex';
     document.querySelector('.books-add-section').style.display = 'none';
     document.querySelector('.contact-us').style.display = 'none';

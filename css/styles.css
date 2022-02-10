@@ -1,4 +1,4 @@
-body{
+body {
   margin: 0;
   padding: 1vw;
   font-family: sans-serif;
@@ -8,11 +8,16 @@ body{
   flex-direction: column;
   justify-content: space-between;
 }
+
 nav li {
   list-style: none;
 }
 
-nav li a{
+a {
+  text-decoration: none;
+}
+
+nav li a {
   color: black;
 }
 
@@ -42,8 +47,6 @@ nav li a{
   flex-direction: column;
   align-items: center;
 }
-
-
 
 .title,
 .author {
@@ -86,22 +89,19 @@ nav {
   flex-direction: row;
   justify-content: space-evenly;
   gap: 24px;
- 
 }
 
 .date-row {
   display: flex;
   justify-content: right;
   padding-right: 10px;
-  
 }
 
-footer{
+footer {
   border: solid black;
   padding: 2vh 2vw;
   font-weight: 700;
   margin-top: 10px;
-
 }
 
 .validate-error {
@@ -109,16 +109,12 @@ footer{
   color: red;
 }
 
-a {
-  text-decoration: none;
-}
-
-.main-nav{
+.main-nav {
   display: flex;
   align-items: center;
 }
 
-.contact-us{
+.contact-us {
   display: none;
   justify-content: center;
   padding-top: 15px;
