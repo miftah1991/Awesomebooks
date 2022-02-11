@@ -1,3 +1,8 @@
+// eslint-disable-next-line no-undef
+const { DateTime } = luxon;
+
+document.getElementById('currentdate').innerText = DateTime.local().toLocaleString(DateTime.DATETIME_MED);
+
 let booksList = [];
 
 class Book {
@@ -14,12 +19,8 @@ class Book {
         li.className = 'elements';
         const titleDiv = document.createElement('div');
         titleDiv.className = 'book-title';
-        titleDiv.textContent = element.title;
+        titleDiv.textContent = `"${element.title}" by ${element.author}`;
         li.appendChild(titleDiv);
-        const authoorDiv = document.createElement('div');
-        authoorDiv.className = 'book-authoor';
-        authoorDiv.textContent = element.author;
-        li.appendChild(authoorDiv);
         const removebtn = document.createElement('button');
         removebtn.className = 'remove-button';
         removebtn.textContent = 'Remove';
@@ -49,13 +50,25 @@ class Book {
   addNewBook() {
     const title = document.querySelector('.title').value;
     const author = document.querySelector('.author').value;
-    const book = {
-      title,
-      author,
-    };
-    booksList.push(book);
-    this.saveDataLocalStorage(booksList);
-    this.generateBooks();
+    if (title === '' || author === '') {
+      const errorLabel = document.querySelector('.validate-error');
+      errorLabel.style.display = 'block';
+    } else {
+      const book = {
+        title,
+        author,
+      };
+      booksList.push(book);
+      this.saveDataLocalStorage(booksList);
+      this.generateBooks();
+      this.showbooksection();
+    }
+  }
+
+  showbooksection = () => {
+    document.querySelector('.books-section').style.display = 'flex';
+    document.querySelector('.books-add-section').style.display = 'none';
+    document.querySelector('.contact-us').style.display = 'none';
   }
 }
 const book = new Book(document.getElementById('book-lis'));

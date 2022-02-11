@@ -1,5 +1,24 @@
-li {
+body {
+  margin: 0;
+  padding: 1vw;
+  font-family: sans-serif;
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+nav li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav li a {
+  color: black;
 }
 
 .books-section h1 {
@@ -24,15 +43,9 @@ li {
 
 /* section: add book */
 .books-add-section {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
-}
-
-.add-book-elements {
-  display: flex;
-  flex-direction: column;
-  gap: 2vh;
 }
 
 .title,
@@ -53,13 +66,60 @@ li {
 .books-section {
   align-items: center;
   text-align: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   border: 3px solid black;
 }
 
 .grey-background {
   background-color: #ddd;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  margin-bottom: 1vh;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.book-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 24px;
+}
+
+.date-row {
+  display: flex;
+  justify-content: right;
+  padding-right: 10px;
+}
+
+footer {
+  border: solid black;
+  padding: 2vh 2vw;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.validate-error {
+  display: none;
+  color: red;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.contact-us {
+  display: none;
+  justify-content: center;
+  padding-top: 15px;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
