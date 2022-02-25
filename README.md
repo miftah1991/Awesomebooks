@@ -2,7 +2,9 @@
 
 # Event Page
 
-> Awesome Books.
+> **Awesome Books.**<br>
+>In this project, I built a basic website that allows users to add/remove books from a book list.
+
 
 ![screenshot](https://github.com/miftah1991/Awesomebooks/blob/milestones/img-1.png)
 
